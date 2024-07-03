@@ -28,6 +28,7 @@ function renderCounter() {
 
 function increaseCounter() {
   counterValue++;
+  tg.HapticFeedback.impactOccurred("medium")	
 
   socket.send(
     JSON.stringify({
@@ -51,7 +52,7 @@ function authUser() {
 }
 
 socket.onopen = (d) => {
-  title.textContent = `Hi, ${username} ${userId}`;
+  title.textContent = `Привіт, ${username}`;
   authUser();
 
   btn.addEventListener("click", (e) => {
