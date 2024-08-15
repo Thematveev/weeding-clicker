@@ -60,3 +60,11 @@ socket.onopen = (d) => {
   });
   btn.removeAttribute("disabled");
 };
+
+const errHandler = () => {
+  btn.remove()
+  title.textContent = 'Connection lost, reload the page to continue'
+}
+
+socket.onerror = errHandler;
+socket.onclose = errHandler;
