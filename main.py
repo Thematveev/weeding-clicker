@@ -29,7 +29,9 @@ templates = Jinja2Templates(directory='templates')
 
 @app.get('/')
 def main(request: Request):
-    return templates.TemplateResponse(request=request, name='index.html')
+    # return templates.TemplateResponse(request=request, name='index.html')
+    return templates.TemplateResponse(request=request, name='finish.html')
+
 
 
 @app.websocket('/ws')
